@@ -47,12 +47,16 @@ namespace DemoSample.CoreUI
             return newNgDriver;
         }
 
-       
 
-        //public static IWebDriver LaunchDriver()
+        //public void AngularWait(int timeout = 30)
         //{
-        //    _driver = BrowserFactory.IntializeBrowser(AppConfigManager.GetBrowser());
-        //    return _driver;
+        //    Watch = new Stopwatch();
+        //    Watch.Start();
+        //    _ngDriver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(timeout);
+        //    _ngDriver.WaitForAngular();
+        //    _ngDriver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(30);
+        //    var elapsed = Watch.Elapsed.TotalSeconds;
+           
         //}
 
         public void EnterText(IWebElement element, string text)

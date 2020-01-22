@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DemoSample.CoreUI;
+using DemoSample.Extensions;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
@@ -31,7 +32,7 @@ namespace DemoSample.Pages
         #region SearchActions
         public void Search(string gbpValue)
         {
-            _driverSupport.EnterText(SearchBox, gbpValue);
+          _driverSupport.EnterText(SearchBox, gbpValue);
             SearchButton.Click();
         }
         public void EnterSearchValue(string svalue)

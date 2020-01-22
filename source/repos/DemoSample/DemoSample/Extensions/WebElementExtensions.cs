@@ -17,10 +17,17 @@ namespace DemoSample.Extensions
             var driver = WebDriverSupport.SupportDriver();
             return WaitUntilDisplayed(e, timeout);
         }
+        //public static void AngularClickElement(this IWebElement e)
+        //{
+        //    WebDriverSupport.NgWebDriver().WaitForAngular();
+        //    e.ClickElement();
+        //    WebDriverSupport.NgWebDriver().WaitForAngular();
+        //}
 
 
         public static void ClickElement(this IWebElement e)
         {
+            if (!e.WaitUntilDisplayed(5)) return;
             e.Click();
         }
     }

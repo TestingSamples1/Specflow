@@ -83,15 +83,15 @@ namespace DemoSample.Scenarios
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add two numbers")]
+        [NUnit.Framework.DescriptionAttribute("Validate USD value")]
         [NUnit.Framework.CategoryAttribute("SmokeTest")]
-        public virtual void AddTwoNumbers()
+        public virtual void ValidateUSDValue()
         {
             string[] tagsOfScenario = new string[] {
                     "SmokeTest"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate USD value", null, new string[] {
                         "SmokeTest"});
-#line 5
+#line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -114,10 +114,10 @@ this.ScenarioInitialize(scenarioInfo);
 #line 2
  this.FeatureBackground();
 #line hidden
-#line 6
+#line 7
  testRunner.Given("I search for \'GBP TO USD\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 7
+#line 8
  testRunner.Then("I validate details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
