@@ -9,6 +9,7 @@ namespace DemoSample
         [TestMethod]
         public void TestMethod1()
         {
+            string s;
         }
     }
 }
