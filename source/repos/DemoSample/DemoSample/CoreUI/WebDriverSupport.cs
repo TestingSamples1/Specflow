@@ -6,18 +6,23 @@ using System.Text;
 using System.Threading.Tasks;
 using DemoSample.Common;
 using OpenQA.Selenium;
+using Protractor;
 
 namespace DemoSample.CoreUI
 {
     public class WebDriverSupport
     {
+        private static NgWebDriver _ngDriver;
         private static IWebDriver _driver;
         private Stopwatch Watch { get; set; }
         public static IWebDriver SupportDriver()
         {
             return _driver;
         }
-
+        public static NgWebDriver NgWebDriver()
+        {
+            return _ngDriver;
+        }
         public static void DisposeDriver()
         {
             _driver.Dispose();
@@ -28,8 +33,27 @@ namespace DemoSample.CoreUI
         public static IWebDriver LaunchDriver()
         {
             _driver = BrowserFactory.IntializeBrowser(AppConfigManager.GetBrowser());
+            _ngDriver = NewNgDriver();
+
             return _driver;
         }
+
+        public static NgWebDriver NewNgDriver()
+        {
+            var newNgDriver = new NgWebDriver(_driver);
+            newNgDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+            newNgDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(60);
+            newNgDriver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(30);
+            return newNgDriver;
+        }
+
+       
+
+        //public static IWebDriver LaunchDriver()
+        //{
+        //    _driver = BrowserFactory.IntializeBrowser(AppConfigManager.GetBrowser());
+        //    return _driver;
+        //}
 
         public void EnterText(IWebElement element, string text)
         {

@@ -115,7 +115,6 @@
   <ItemGroup>
     <Compile Include="Common\AppConfigManager.cs" />
     <Compile Include="CoreUI\BrowserFactory.cs" />
-    <Compile Include="CoreUI\NgWebDriverSupport.cs" />
     <Compile Include="CoreUI\WebDriverSupport.cs" />
     <Compile Include="Extensions\WebElementExtensions.cs" />
     <Compile Include="Hooks1.cs" />
