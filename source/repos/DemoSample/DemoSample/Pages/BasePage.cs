@@ -31,7 +31,7 @@ namespace DemoSample.Pages
 
         public static void NavigateUrl(string url)
         {
-           // NgWebDriverSupport.SupportDriver().Navigate().GoToUrl(AppConfigManager.GetBaseUrl());
+            WebDriverSupport.SupportDriver().Navigate().GoToUrl(AppConfigManager.GetBaseUrl());
         }
     }
 }

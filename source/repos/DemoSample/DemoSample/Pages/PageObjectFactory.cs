@@ -7,7 +7,7 @@ using OpenQA.Selenium;
 
 namespace DemoSample.Pages
 {
-  public  class PageObjectFactory
+    public class PageObjectFactory
     {
         public IWebDriver _driver;
         public BasePage _basePage;

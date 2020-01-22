@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DemoSample.CoreUI;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
@@ -10,8 +11,8 @@ using OpenQA.Selenium.Support.PageObjects;
 namespace DemoSample.Pages
 {
     public class HomePage
-    {
-       // protected WebDriverSupport _driverSupport = new WebDriverSupport();
+    { 
+        protected WebDriverSupport _driverSupport = new WebDriverSupport();
 
 
         [FindsBy(How = How.Name, Using = "q")]
@@ -28,23 +29,23 @@ namespace DemoSample.Pages
         private IWebElement secondValue { get; set; }
 
         #region SearchActions
-        //public void Search(string gbpValue)
-        //{
-        //    _driverSupport.EnterText(SearchBox, gbpValue);
-        //    SearchButton.Click();
-        //}
-        //public void EnterSearchValue(string svalue)
-        //{
-        //    _driverSupport.EnterText(SearchBox, svalue);
-        //}
-        //#endregion
-        //#region ValidateActions
-        //public void Validate()
-        //{
-        //    Assert.AreEqual("1", firstValue.GetAttribute("value"));
-        //    var usdValue = Convert.ToDouble(secondValue.GetAttribute("value"));
-        //    Assert.Greater(usdValue, 0.0);
-        //}
+        public void Search(string gbpValue)
+        {
+            _driverSupport.EnterText(SearchBox, gbpValue);
+            SearchButton.Click();
+        }
+        public void EnterSearchValue(string svalue)
+        {
+            _driverSupport.EnterText(SearchBox, svalue);
+        }
+        #endregion
+        #region ValidateActions
+        public void Validate()
+        {
+            Assert.AreEqual("1", firstValue.GetAttribute("value"));
+            var usdValue = Convert.ToDouble(secondValue.GetAttribute("value"));
+            Assert.Greater(usdValue, 0.0);
+        }
         #endregion
 
     }

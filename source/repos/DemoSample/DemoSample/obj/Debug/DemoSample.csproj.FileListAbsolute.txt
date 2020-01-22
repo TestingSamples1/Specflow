@@ -131,3 +131,5 @@ C:\Users\tuelysaseendran\source\repos\GoogleDemo\Specflow\source\repos\DemoSampl
 C:\Users\tuelysaseendran\source\repos\GoogleDemo\Specflow\source\repos\DemoSample\DemoSample\bin\Debug\Utf8Json.xml
 C:\Users\tuelysaseendran\source\repos\GoogleDemo\Specflow\source\repos\DemoSample\DemoSample\bin\Debug\WebDriver.xml
 C:\Users\tuelysaseendran\source\repos\GoogleDemo\Specflow\source\repos\DemoSample\DemoSample\bin\Debug\WebDriver.Support.xml
+C:\Users\tuelysaseendran\source\repos\GoogleDemo\Specflow\source\repos\DemoSample\DemoSample\bin\Debug\Protractor.dll
+C:\Users\tuelysaseendran\source\repos\GoogleDemo\Specflow\source\repos\DemoSample\DemoSample\bin\Debug\Protractor.xml

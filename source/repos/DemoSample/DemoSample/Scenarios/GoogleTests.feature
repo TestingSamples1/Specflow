@@ -6,5 +6,5 @@ Background:
 
 @test
 Scenario: Verify USD
-	Given I search for 'GBP TO USD'
-	Then I validate details
+	#Given I search for 'GBP TO USD'
+	#Then I validate details

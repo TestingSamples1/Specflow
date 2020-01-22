@@ -23,13 +23,13 @@ namespace DemoSample
         [Given(@"I search for '(.*)'")]
         public void GivenISearchFor(string gbpValue)
         {
-           // _page.homePage().Search(gbpValue);
+            _page.homePage().Search(gbpValue);
         }
 
         [Then(@"I validate details")]
         public void ThenIValidateDetails()
         {
-           // _page.homePage().Validate();
+            _page.homePage().Validate();
         }
     }
 }
