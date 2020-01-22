@@ -118,16 +118,17 @@
     <Compile Include="CoreUI\NgWebDriverSupport.cs" />
     <Compile Include="CoreUI\WebDriverSupport.cs" />
     <Compile Include="Extensions\WebElementExtensions.cs" />
+    <Compile Include="Hooks1.cs" />
     <Compile Include="Pages\PageObjectFactory.cs" />
-    <Compile Include="Steps\GoogleTestsSteps.cs" />
     <Compile Include="Pages\BasePage.cs" />
     <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Steps\VerifyUSDSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Scenarios\GoogleTests.feature" />
     <None Include="packages.config" />
+    <None Include="Scenarios\VerifyUSD.feature" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

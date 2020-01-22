@@ -6,18 +6,19 @@ using TechTalk.SpecFlow;
 namespace DemoSample
 {
     [Binding]
-    public class GoogleTestsSteps
+    public class VerifyUSDSteps
     {
         private PageObjectFactory _page;
-        public GoogleTestsSteps(PageObjectFactory page)
+        public VerifyUSDSteps(PageObjectFactory page)
         {
             _page = page;
         }
 
-        [Given(@"I navigate into url")]
-        public void GivenINavigateIntoUrl()
+        [Given(@"I navigate into google url")]
+        public void GivenINavigateIntoGoogleUrl()
         {
             BasePage.NavigateUrl(AppConfigManager.GetBaseUrl());
+
         }
 
         [Given(@"I search for '(.*)'")]
