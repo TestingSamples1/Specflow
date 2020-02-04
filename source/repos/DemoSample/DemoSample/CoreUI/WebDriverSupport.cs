@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using DemoSample.Common;
 using OpenQA.Selenium;
 using Protractor;
+using DemoSample.Extensions;
 
 namespace DemoSample.CoreUI
 {
@@ -34,20 +35,19 @@ namespace DemoSample.CoreUI
         {
             _driver = BrowserFactory.IntializeBrowser(AppConfigManager.GetBrowser());
             _ngDriver = NewNgDriver();
-
             return _driver;
         }
 
         public static NgWebDriver NewNgDriver()
         {
             var newNgDriver = new NgWebDriver(_driver);
-            newNgDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-            newNgDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(60);
+            //newNgDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+            //newNgDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(60);
             newNgDriver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(30);
             return newNgDriver;
         }
 
-
+      
         //public void AngularWait(int timeout = 30)
         //{
         //    Watch = new Stopwatch();
@@ -56,51 +56,7 @@ namespace DemoSample.CoreUI
         //    _ngDriver.WaitForAngular();
         //    _ngDriver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(30);
         //    var elapsed = Watch.Elapsed.TotalSeconds;
-           
+
         //}
-
-        public void EnterText(IWebElement element, string text)
-        {
-            WaitUntilElementDisplayed(element);
-            //if (clearBeforeTyping) element.Clear();
-            element.SendKeys(text);
-        }
-
-
-
-        public bool WaitUntilElementDisplayed(IWebElement element, int timeout = 60)
-        {
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
-            Watch = new Stopwatch();
-            Watch.Start();
-            var elementDisplayed = false;
-            while (Watch.Elapsed.TotalMilliseconds <= timeout * 1000 && !elementDisplayed)
-            {
-                try
-                {
-                    if (element.Displayed)
-                    {
-                        elementDisplayed = true;
-                    }
-                }
-                catch
-                {
-                    //Ignored
-                }
-            }
-
-            _driver.Manage().Timeouts().ImplicitWait = AppConfigManager.ImplictWaitPeriod();
-            return elementDisplayed;
-        }
-
-
-        //public void EnterText(IWebElement e,string text)
-        //{
-        //    e.Clear();
-        //    e.SendKeys(text);
-        //}
-
-
-
     }
 }

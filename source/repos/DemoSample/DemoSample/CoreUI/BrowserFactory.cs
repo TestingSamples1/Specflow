@@ -20,14 +20,13 @@ namespace DemoSample.CoreUI
             switch (browser)
             {
                 case "Chrome":
-                    _driver = new ChromeDriver();
-                    
+                   _driver =  ChromeDriver();
                     break;
                 case "FireFox":
                     _driver = new FirefoxDriver();
                     break;
                 default:
-                    _driver = ChromeDriver();
+                    _driver = new ChromeDriver();
                     break;
             }
             _driver.Manage().Window.Maximize();
@@ -41,12 +40,8 @@ namespace DemoSample.CoreUI
             options.AddUserProfilePreference("profile.managed_default_content_settings.notifications", 2);
             var chromeDriverService = ChromeDriverService.CreateDefaultService();
             options.AddArguments(new List<string>() {
-                    "--silent-launch",
-                    "--no-startup-window",
-                    "no-sandbox",
-                    "headless",
-                    "disable-gpu",
-                    "-incognito"
+                   "no-sandbox",
+                   "-incognito"
                 });
                 chromeDriverService.HideCommandPromptWindow = true;    // This is to hidden the console.
             

@@ -13,22 +13,66 @@ namespace DemoSample.Extensions
     {
         public static bool WaitUntilDisplayed(this IWebElement e, int timeout = 60)
         {
-            var watch = new Stopwatch();
-            var driver = WebDriverSupport.SupportDriver();
-            return WaitUntilDisplayed(e, timeout);
+            return WaitHandler(e, timeout, ElementOptions.Displayed);
         }
-        //public static void AngularClickElement(this IWebElement e)
-        //{
-        //    WebDriverSupport.NgWebDriver().WaitForAngular();
-        //    e.ClickElement();
-        //    WebDriverSupport.NgWebDriver().WaitForAngular();
-        //}
-
 
         public static void ClickElement(this IWebElement e)
         {
             if (!e.WaitUntilDisplayed(5)) return;
-            e.Click();
+            try
+            {
+                e.Click();
+            }
+            catch (Exception exception)
+            {
+                IJavaScriptExecutor executor = (IJavaScriptExecutor)WebDriverSupport.SupportDriver();
+                executor.ExecuteScript("arguments[0].click();", e);
+            }
+        }
+
+        public static void EnterTextIntoField(IWebElement element, string text, bool clearBeforeTyping = true)
+        {
+            WaitUntilDisplayed(element);
+            if (clearBeforeTyping) element.Clear();
+            element.SendKeys(text);
+        }
+
+        private enum ElementOptions
+        {
+            Displayed,
+            NotDisplayed,
+            Enabled,
+        }
+        private static  bool WaitHandler(IWebElement e, int timeout, ElementOptions option, string text = "")
+        {
+            var watch = new Stopwatch();
+            var driver = BrowserFactory._driver;
+            var result = false;
+            watch.Start();
+            while (watch.Elapsed.TotalMilliseconds <= timeout)
+            {
+                try
+                {
+                    switch (option)
+                    {
+                        case ElementOptions.Displayed:
+                            if (e.Displayed)
+                            {
+                                result = true;
+                            }
+
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
+                catch (Exception exception)
+                {
+                    //ignore
+                }
+            }
+            return  result;
         }
     }
 }

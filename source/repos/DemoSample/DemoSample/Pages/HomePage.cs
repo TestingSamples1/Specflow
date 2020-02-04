@@ -32,13 +32,11 @@ namespace DemoSample.Pages
         #region SearchActions
         public void Search(string gbpValue)
         {
-          _driverSupport.EnterText(SearchBox, gbpValue);
-            SearchButton.Click();
+            WebElementExtensions.EnterTextIntoField(SearchBox, gbpValue);
+            //SearchButton.Click();
+            SearchButton.ClickElement();
         }
-        public void EnterSearchValue(string svalue)
-        {
-            _driverSupport.EnterText(SearchBox, svalue);
-        }
+       
         #endregion
         #region ValidateActions
         public void Validate()

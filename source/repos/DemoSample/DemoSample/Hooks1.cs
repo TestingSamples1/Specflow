@@ -26,7 +26,6 @@ namespace DemoSample
         [BeforeScenario]
         public void BeforeScenario()
         {
-
             _currentDriver = WebDriverSupport.LaunchDriver();
             _iObjectContainer.RegisterInstanceAs<IWebDriver>(_currentDriver);
 
