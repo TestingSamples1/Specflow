@@ -109,6 +109,7 @@ C:\Users\tuelysaseendran\source\repos\GoogleDemo\Specflow\source\repos\DemoSampl
 C:\Users\tuelysaseendran\source\repos\GoogleDemo\Specflow\source\repos\DemoSample\DemoSample\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 C:\Users\tuelysaseendran\source\repos\GoogleDemo\Specflow\source\repos\DemoSample\DemoSample\bin\Debug\nunit.framework.dll
 C:\Users\tuelysaseendran\source\repos\GoogleDemo\Specflow\source\repos\DemoSample\DemoSample\bin\Debug\Protractor.dll
+C:\Users\tuelysaseendran\source\repos\GoogleDemo\Specflow\source\repos\DemoSample\DemoSample\bin\Debug\SeleniumExtras.PageObjects.dll
 C:\Users\tuelysaseendran\source\repos\GoogleDemo\Specflow\source\repos\DemoSample\DemoSample\bin\Debug\System.Threading.Tasks.Extensions.dll
 C:\Users\tuelysaseendran\source\repos\GoogleDemo\Specflow\source\repos\DemoSample\DemoSample\bin\Debug\TechTalk.SpecFlow.dll
 C:\Users\tuelysaseendran\source\repos\GoogleDemo\Specflow\source\repos\DemoSample\DemoSample\bin\Debug\Utf8Json.dll
@@ -129,7 +130,7 @@ C:\Users\tuelysaseendran\source\repos\GoogleDemo\Specflow\source\repos\DemoSampl
 C:\Users\tuelysaseendran\source\repos\GoogleDemo\Specflow\source\repos\DemoSample\DemoSample\bin\Debug\Utf8Json.xml
 C:\Users\tuelysaseendran\source\repos\GoogleDemo\Specflow\source\repos\DemoSample\DemoSample\bin\Debug\WebDriver.xml
 C:\Users\tuelysaseendran\source\repos\GoogleDemo\Specflow\source\repos\DemoSample\DemoSample\bin\Debug\WebDriver.Support.xml
-C:\Users\tuelysaseendran\source\repos\GoogleDemo\Specflow\source\repos\DemoSample\DemoSample\obj\Debug\DemoSample.csprojAssemblyReference.cache
 C:\Users\tuelysaseendran\source\repos\GoogleDemo\Specflow\source\repos\DemoSample\DemoSample\obj\Debug\DemoSample.csproj.CopyComplete
 C:\Users\tuelysaseendran\source\repos\GoogleDemo\Specflow\source\repos\DemoSample\DemoSample\obj\Debug\DemoSample.dll
 C:\Users\tuelysaseendran\source\repos\GoogleDemo\Specflow\source\repos\DemoSample\DemoSample\obj\Debug\DemoSample.pdb
+C:\Users\tuelysaseendran\source\repos\GoogleDemo\Specflow\source\repos\DemoSample\DemoSample\obj\Debug\DemoSample.csprojAssemblyReference.cache

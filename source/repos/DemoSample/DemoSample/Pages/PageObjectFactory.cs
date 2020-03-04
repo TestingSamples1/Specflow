@@ -16,6 +16,12 @@ namespace DemoSample.Pages
             _driver = driver;
             _basePage = basePage;
         }
+       
+        public LoginPage loginPage()
+        {
+            return _basePage.GetPage<LoginPage>(_driver);
+        }
+
         public HomePage homePage()
         {
             return _basePage.GetPage<HomePage>(_driver);

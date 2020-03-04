@@ -30,13 +30,13 @@ namespace DemoSample.Extensions
             }
         }
 
-        public static void EnterTextIntoField(IWebElement element, string text, bool clearBeforeTyping = true)
+        public static void EnterText(this IWebElement element, string text)
         {
             WaitUntilDisplayed(element);
-            if (clearBeforeTyping) element.Clear();
             element.SendKeys(text);
         }
 
+       
         private enum ElementOptions
         {
             Displayed,

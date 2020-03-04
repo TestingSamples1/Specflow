@@ -12,9 +12,6 @@ namespace DemoSample
     [Binding]
     public sealed class Hooks1 : IDisposable
     {
-        // For additional details on SpecFlow hooks see http://go.specflow.org/doc-hooks
-
-
         private static IWebDriver _currentDriver;
         private static IObjectContainer _iObjectContainer;
 
@@ -28,7 +25,6 @@ namespace DemoSample
         {
             _currentDriver = WebDriverSupport.LaunchDriver();
             _iObjectContainer.RegisterInstanceAs<IWebDriver>(_currentDriver);
-
         }
 
         public void Dispose()

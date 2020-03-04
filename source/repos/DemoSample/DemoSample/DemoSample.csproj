@@ -66,6 +66,9 @@
     <Reference Include="Protractor, Version=0.13.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Protractor.0.13.0\lib\net40\Protractor.dll</HintPath>
     </Reference>
+    <Reference Include="SeleniumExtras.PageObjects, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetSeleniumExtras.PageObjects.3.11.0\lib\net45\SeleniumExtras.PageObjects.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -118,16 +121,22 @@
     <Compile Include="CoreUI\WebDriverSupport.cs" />
     <Compile Include="Extensions\WebElementExtensions.cs" />
     <Compile Include="Hooks1.cs" />
+    <Compile Include="Pages\HomePage.cs" />
+    <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\PageObjectFactory.cs" />
     <Compile Include="Pages\BasePage.cs" />
-    <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Steps\VerifyUSDSteps.cs" />
+    <Compile Include="Steps\SignUpSteps.cs" />
+    <Compile Include="TestData\TestData.cs" />
+    <Compile Include="Steps\UISteps.cs" />
+    <Compile Include="UnitTest1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="Scenarios\VerifyUSD.feature" />
+    <None Include="Scenarios\News.feature" />
+    <None Include="Scenarios\SignUp.feature" />
+    <None Include="Scenarios\UI.feature" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

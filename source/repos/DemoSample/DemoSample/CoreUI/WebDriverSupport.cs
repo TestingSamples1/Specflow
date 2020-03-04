@@ -13,17 +13,13 @@ namespace DemoSample.CoreUI
 {
     public class WebDriverSupport
     {
-        private static NgWebDriver _ngDriver;
         private static IWebDriver _driver;
         private Stopwatch Watch { get; set; }
         public static IWebDriver SupportDriver()
         {
             return _driver;
         }
-        public static NgWebDriver NgWebDriver()
-        {
-            return _ngDriver;
-        }
+
         public static void DisposeDriver()
         {
             _driver.Dispose();
@@ -34,29 +30,26 @@ namespace DemoSample.CoreUI
         public static IWebDriver LaunchDriver()
         {
             _driver = BrowserFactory.IntializeBrowser(AppConfigManager.GetBrowser());
-            _ngDriver = NewNgDriver();
             return _driver;
         }
 
-        public static NgWebDriver NewNgDriver()
+        public IWebElement FindNewElement(By by, int timeout = 10)
         {
-            var newNgDriver = new NgWebDriver(_driver);
-            //newNgDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-            //newNgDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(60);
-            newNgDriver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(30);
-            return newNgDriver;
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(timeout);
+
+            try
+            {
+               return _driver.FindElement(by);
+            }
+            catch (Exception e)
+            {
+                return default(IWebElement);
+            }
+            finally
+            {
+                _driver.Manage().Timeouts().ImplicitWait = AppConfigManager.ImplictWaitPeriod();
+            }
         }
 
-      
-        //public void AngularWait(int timeout = 30)
-        //{
-        //    Watch = new Stopwatch();
-        //    Watch.Start();
-        //    _ngDriver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(timeout);
-        //    _ngDriver.WaitForAngular();
-        //    _ngDriver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(30);
-        //    var elapsed = Watch.Elapsed.TotalSeconds;
-
-        //}
     }
 }
